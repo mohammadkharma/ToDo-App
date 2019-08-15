@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import ToDos from './Components/ToDos';
 import AddToDo from './Components/AddToDo';
+import ResetToDos from './Components/ResetToDos';
 class App extends Component {
-  
   // setting the main state for the todos data
   state = {
     todos: [
-      {id:1, content: 'make shopping'},
-      {id:2, content: 'prepare for exam'}
+      { id: 1, content: 'make shopping' },
+      { id: 2, content: 'prepare for exam' }
     ]
   }
 
   // filtering through the todos and returning all todos except the one with the id in param
   // deleteTodo will be passed as a prop to the ToDos component
   deleteTodo = (id) => {
-    const todos = this.state.todos.filter(todo=>{
+    const todos = this.state.todos.filter(todo => {
       return todo.id !== id;
     })
     this.setState({
@@ -33,21 +33,22 @@ class App extends Component {
   }
 
   // resetting func to be used on the reset button on click 
-  resetTodos = e => {
-    e.preventDefault();
+  resetTodos = todoList => {
+    let todos = todoList;
     this.setState({
-      todos: ''
+      todos
     })
   }
-  
-  render(){
+
+  render() {
     return (
-      <div className="App">
-        <h1>ToDo App</h1>
-        <ToDos todos={this.state.todos} deleteTodo={this.deleteTodo} />
-        <AddToDo addTodo={this.addTodo} />
-        <button onClick={this.resetTodos}>Reset</button>
-      </div>
+
+    <div className="App container">
+      <h1>ToDo App</h1>
+      <ToDos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+      <AddToDo addTodo={this.addTodo} />
+      <ResetToDos resetTodos={this.resetTodos} />
+    </div>
     );
   }
 }

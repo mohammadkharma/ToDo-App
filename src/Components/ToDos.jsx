@@ -16,7 +16,7 @@ const ToDos = ({ todos, deleteTodo }) => {
 
     // outputting the todoList in DOM
     return (
-        <div>
+        <div className='todoList'>
             {todoList}
         </div>
     )
