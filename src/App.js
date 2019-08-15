@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
+import './styles/app.css';
 import ToDos from './Components/ToDos';
 import AddToDo from './Components/AddToDo';
 import ResetToDos from './Components/ResetToDos';
 import SearchToDos from './Components/SearchToDos';
+
 class App extends Component {
   // setting the main state for the todos data
   state = {
-    todos: [
-      { id: 1, content: 'make shopping' },
-      { id: 2, content: 'prepare for exam' }
-    ]
+    todos: []
   }
 
   // filtering through the todos and returning all todos except the one with the id in param
@@ -43,14 +42,13 @@ class App extends Component {
 
   render() {
     return (
-
-    <div className="App container">
-      <h1>ToDo App</h1>
-      <SearchToDos />
-      <ToDos todos={this.state.todos} deleteTodo={this.deleteTodo} />
-      <AddToDo addTodo={this.addTodo} />
-      <ResetToDos resetTodos={this.resetTodos} />
-    </div>
+      <div className="App">
+        <h1>Your ToDo List</h1>
+        <ToDos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+        <AddToDo addTodo={this.addTodo} />
+        <ResetToDos resetTodos={this.resetTodos} />
+        <SearchToDos />
+      </div>
     );
   }
 }

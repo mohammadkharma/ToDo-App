@@ -1,4 +1,7 @@
+// responsible for clearing the todo list
+
 import React, { Component } from 'react';
+import '../styles/resetToDos.css';
 
 class ResetToDos extends Component {
     state = {

@@ -1,8 +1,12 @@
+// responsible for the search engine
+
 import React, { Component } from 'react';
+import '../styles/searchToDos.css';
 
 class SearchToDos extends Component {
 
     handleKeyUp = e => {
+        e.preventDefault();
         
         const todoList = document.querySelector('.todoList');
         const term = e.target.value.trim().toLowerCase();

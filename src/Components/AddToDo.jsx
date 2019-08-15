@@ -1,7 +1,7 @@
 // responsible for adding new todo
 
 import React, { Component } from 'react';
-
+import '../styles/addToDo.css';
 class AddToDo extends Component {
     
     state = {

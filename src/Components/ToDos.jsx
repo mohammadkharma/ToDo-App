@@ -12,7 +12,7 @@ const ToDos = ({ todos, deleteTodo }) => {
             return (<div key={todo.id}>
                     <span onClick={()=>{deleteTodo(todo.id)}}>{todo.content}</span>
                 </div>)
-        })) : (<p>You have no todos left, yey!</p>);
+        })) : (<p>You have no todos</p>);
 
     // outputting the todoList in DOM
     return (
