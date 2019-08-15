@@ -1,0 +1,30 @@
+import React, { Component } from 'react';
+
+class SearchToDos extends Component {
+
+    handleKeyUp = e => {
+        
+        const todoList = document.querySelector('.todoList');
+        const term = e.target.value.trim().toLowerCase();
+
+        // adding classes to unmatched todos 
+        Array.from(todoList.children)
+            .filter(todos => !todos.textContent.toLowerCase().includes(term))
+            .forEach(todos => todos.classList.add('filtered'));
+
+        // removing classes on delete    
+        Array.from(todoList.children)
+            .filter(todos => todos.textContent.toLowerCase().includes(term))
+            .forEach(todos => todos.classList.remove('filtered'));
+    }
+
+    render() {
+        return (
+            <form>
+                <input type="text" onKeyUp={this.handleKeyUp} />
+            </form>
+        )
+    }
+}
+
+export default SearchToDos;

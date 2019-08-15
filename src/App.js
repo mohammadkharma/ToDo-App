@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ToDos from './Components/ToDos';
 import AddToDo from './Components/AddToDo';
 import ResetToDos from './Components/ResetToDos';
+import SearchToDos from './Components/SearchToDos';
 class App extends Component {
   // setting the main state for the todos data
   state = {
@@ -45,6 +46,7 @@ class App extends Component {
 
     <div className="App container">
       <h1>ToDo App</h1>
+      <SearchToDos />
       <ToDos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       <AddToDo addTodo={this.addTodo} />
       <ResetToDos resetTodos={this.resetTodos} />
