@@ -10,13 +10,22 @@ class App extends Component {
       {id:2, content: 'prepare for exam'}
     ]
   }
+
+  deleteTodo = (id) => {
+    const todos = this.state.todos.filter(todo=>{
+      return todo.id !== id;
+    })
+    this.setState({
+      todos
+    })
+  }
   
   render(){
     return (
       <div className="App container">
         <h1 className="center blue-text">ToDo App</h1>
-        {/* passing the todos to the ToDos component */}
-        <ToDos todos={this.state.todos} />
+        {/* passing the todos data and the delete func to the ToDos component */}
+        <ToDos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     );
   }

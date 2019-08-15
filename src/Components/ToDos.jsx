@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const ToDos = ({ todos }) => {
+const ToDos = ({ todos, deleteTodo }) => {
 
     // using ternary operator to check if there's still todos or not anymore and handle both cases (true or false)
     // incase thr ternary operator returned true: we map over all todos and output them individually
@@ -10,7 +10,7 @@ const ToDos = ({ todos }) => {
     const todoList = todos.length ? (
         todos.map(todo => {
             return (<div className="collection-item" key={todo.id}>
-                    <span>{todo.content}</span>
+                    <span onClick={()=>{deleteTodo(todo.id)}}>{todo.content}</span>
                 </div>)
         })) : (<p className="center">You have no todos left, yey!</p>);
 
