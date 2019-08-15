@@ -1,6 +1,7 @@
 // responsible for listing individual todos in DOM
 
 import React from 'react';
+import '../styles/toDos.css';
 
 const ToDos = ({ todos, deleteTodo }) => {
 
@@ -9,8 +10,9 @@ const ToDos = ({ todos, deleteTodo }) => {
     // incase the ternary operator returned false: we output a <p> 
     const todoList = todos.length ? (
         todos.map(todo => {
-            return (<div key={todo.id}>
-                    <span onClick={()=>{deleteTodo(todo.id)}}>{todo.content}</span>
+            return (<div className='todo' key={todo.id}>
+                    <span>{todo.content}</span>
+                    <span onClick={()=>{deleteTodo(todo.id)}}><b>X</b></span>
                 </div>)
         })) : (<p>You have no todos</p>);
 

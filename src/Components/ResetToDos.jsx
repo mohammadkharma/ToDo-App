@@ -15,7 +15,7 @@ class ResetToDos extends Component {
 
     render() {
         return(
-            <button onClick={this.handleClick} >Reset</button>
+            <button className='resetBtn' onClick={this.handleClick} >Reset</button>
         )
     }
 }

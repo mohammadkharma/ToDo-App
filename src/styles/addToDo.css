@@ -1,0 +1,14 @@
+.addTodo input {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid white;
+    margin-top: 2rem;
+    outline: none;
+    color: rgb(204, 197, 197);
+}
+
+::placeholder {
+    color: rgba(204, 197, 197, 0.658);
+    font-size: 14px;
+    text-align: center;
+}

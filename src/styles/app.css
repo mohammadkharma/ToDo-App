@@ -1,3 +1,8 @@
 .App {
-    background: pink;
+    color: rgb(204, 197, 197);
+    text-align: center;
+    position: relative;
+    width: 400px;
+    margin: auto;
+    margin-top: 2rem;
 }

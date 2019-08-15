@@ -24,8 +24,10 @@ class SearchToDos extends Component {
 
     render() {
         return (
-            <form>
-                <input type="text" onKeyUp={this.handleKeyUp} />
+            <form className='searchTodo'>
+                <input type="text"
+                placeholder='search your todos'
+                onKeyUp={this.handleKeyUp} />
             </form>
         )
     }

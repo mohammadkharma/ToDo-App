@@ -8,7 +8,12 @@ import SearchToDos from './Components/SearchToDos';
 class App extends Component {
   // setting the main state for the todos data
   state = {
-    todos: []
+    todos: [
+      {id: 1, content: 'reply to Shakira'},
+      {id: 2, content: 'visit Maldives'},
+      {id: 3, content: 'get th Ferrari from garage'},
+      {id: 4, content: 'dinner with Obama'}
+    ]
   }
 
   // filtering through the todos and returning all todos except the one with the id in param
@@ -44,10 +49,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Your ToDo List</h1>
-        <ToDos todos={this.state.todos} deleteTodo={this.deleteTodo} />
         <AddToDo addTodo={this.addTodo} />
-        <ResetToDos resetTodos={this.resetTodos} />
+        <ToDos todos={this.state.todos} deleteTodo={this.deleteTodo} />
         <SearchToDos />
+        <ResetToDos resetTodos={this.resetTodos} />
       </div>
     );
   }
