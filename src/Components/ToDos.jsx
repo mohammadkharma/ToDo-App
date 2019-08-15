@@ -1,0 +1,26 @@
+// responsible for listing individual todos
+
+import React from 'react';
+
+const ToDos = ({ todos }) => {
+
+    // using ternary operator to check if there's still todos or not anymore and handle both cases (true or false)
+    // incase thr ternary operator returned true: we map over all todos and output them individually
+    // incase the ternary operator returned false: we output a <p> 
+    const todoList = todos.length ? (
+        todos.map(todo => {
+            return (<div className="collection-item" key={todo.id}>
+                    <span>{todo.content}</span>
+                </div>)
+        })) : (<p className="center">You have no todos left, yey!</p>);
+
+    // outputting the todoList in DOM
+    return (
+        <div className="todos collection">
+            {todoList}
+        </div>
+    )
+
+}
+
+export default ToDos;
