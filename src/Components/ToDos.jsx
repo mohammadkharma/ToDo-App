@@ -1,4 +1,4 @@
-// responsible for listing individual todos
+// responsible for listing individual todos in DOM
 
 import React from 'react';
 
