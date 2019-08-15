@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ToDos from './Components/ToDos';
 import AddToDo from './Components/AddToDo';
-import UUIDGenerator from 'react-native-uuid-generator';
-
 class App extends Component {
   
   // setting the main state for the todos data
