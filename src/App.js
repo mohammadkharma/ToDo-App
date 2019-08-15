@@ -12,6 +12,7 @@ class App extends Component {
   }
 
   // filtering through the todos and returning all todos except the one with the id in param
+  // deleteTodo will be passed as a prop to the ToDos component
   deleteTodo = (id) => {
     const todos = this.state.todos.filter(todo=>{
       return todo.id !== id;
@@ -22,22 +23,30 @@ class App extends Component {
   }
 
   // grabbing the new todo from AddToDo component, giving it a new id, adding it to the todos array, then updating the state
+  // addTodo will be passed as a prop to the AddToDo component
   addTodo = todo => {
     todo.id = Math.random();
     let todos = [...this.state.todos, todo];
-    console.log(todo.id);
     this.setState({
       todos
+    })
+  }
+
+  // resetting func to be used on the reset button on click 
+  resetTodos = e => {
+    e.preventDefault();
+    this.setState({
+      todos: ''
     })
   }
   
   render(){
     return (
-      <div className="App container">
-        <h1 className="center blue-text">ToDo App</h1>
-        {/* passing the todos data and the delete func to the ToDos component */}
+      <div className="App">
+        <h1>ToDo App</h1>
         <ToDos todos={this.state.todos} deleteTodo={this.deleteTodo} />
         <AddToDo addTodo={this.addTodo} />
+        <button onClick={this.resetTodos}>Reset</button>
       </div>
     );
   }

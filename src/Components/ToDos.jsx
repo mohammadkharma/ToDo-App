@@ -9,14 +9,14 @@ const ToDos = ({ todos, deleteTodo }) => {
     // incase the ternary operator returned false: we output a <p> 
     const todoList = todos.length ? (
         todos.map(todo => {
-            return (<div className="collection-item" key={todo.id}>
+            return (<div key={todo.id}>
                     <span onClick={()=>{deleteTodo(todo.id)}}>{todo.content}</span>
                 </div>)
-        })) : (<p className="center">You have no todos left, yey!</p>);
+        })) : (<p>You have no todos left, yey!</p>);
 
     // outputting the todoList in DOM
     return (
-        <div className="todos collection">
+        <div>
             {todoList}
         </div>
     )
