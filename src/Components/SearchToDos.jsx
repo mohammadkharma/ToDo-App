@@ -20,7 +20,8 @@ class SearchToDos extends Component {
         Array.from(todoList.children)
             .filter(todos => todos.textContent.toLowerCase().includes(term))
             .forEach(todos => todos.classList.remove('filtered'));
-    }
+        
+        }
 
     render() {
         return (
